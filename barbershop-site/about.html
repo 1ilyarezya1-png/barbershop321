@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Elite Barbershop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>Elite Barbershop</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="services.html" data-i18n="nav-services">Services</a></li>
+                    <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
+                    <li><a href="about.html" data-i18n="nav-contact">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ro">RO</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 data-i18n="contact-page-title">Contact Us</h1>
+                <p data-i18n="contact-page-subtitle">Get in touch or book your appointment</p>
+            </div>
+        </section>
+
+        <section class="contact section-padding">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2 data-i18n="contact-info-title">Visit Us</h2>
+                        <div class="info-item">
+                            <h3 data-i18n="contact-address-label">Address</h3>
+                            <p data-i18n="contact-address">123 Main Street, City Center, 10001</p>
+                        </div>
+                        <div class="info-item">
+                            <h3 data-i18n="contact-phone-label">Phone</h3>
+                            <p><a href="tel:+1234567890" data-i18n="contact-phone">+1 (234) 567-890</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3 data-i18n="contact-hours-label">Opening Hours</h3>
+                            <p data-i18n="contact-hours">Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 9:00 AM - 6:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                    <form
+                    action="https://formspree.io/f/mzdazkar"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <div class="contact-form-wrapper">
+                        <h2 data-i18n="booking-form-title">Book Your Appointment</h2>
+                        <form class="booking-form" id="bookingForm">
+                            <div class="form-group">
+                                <label for="name" data-i18n="form-name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="form-phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service" data-i18n="form-service">Service</label>
+                                <select id="service" name="service" required>
+                                    <option value="" data-i18n="form-service-select">Select a service</option>
+                                    <option value="classic" data-i18n="form-service-classic">Classic Haircut</option>
+                                    <option value="beard" data-i18n="form-service-beard">Beard Trim & Shape</option>
+                                    <option value="shave" data-i18n="form-service-shave">Hot Towel Shave</option>
+                                    <option value="haircut-beard" data-i18n="form-service-haircut-beard">Haircut + Beard</option>
+                                    <option value="fade" data-i18n="form-service-fade">Fade Haircut</option>
+                                    <option value="styling" data-i18n="form-service-styling">Hair Styling</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date" data-i18n="form-date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="form-message">Message (Optional)</label>
+                                <textarea id="message" name="message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="form-submit">Submit Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer-text">&copy; 2026 Elite Barbershop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script>
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Form submission handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Booking submitted! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
